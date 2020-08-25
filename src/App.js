@@ -8,6 +8,7 @@ import axios from 'axios';
 import Search from './components/users/Search';
 import Alert from './components/layout/Alert';
 import About from './components/pages/About';
+import GithubState from './context/github/GithubState';
 
 
 const App = () => {
@@ -57,6 +58,7 @@ const App = () => {
     setTimeout(() => setAlert(null),5000);
   };
     return (
+      <GithubState>
       <Router>
         <div className="App">
         <Navbar/>
@@ -91,6 +93,7 @@ const App = () => {
         </div>
       </div>
       </Router>
+      </GithubState>
     );
 }
 
